@@ -7,7 +7,7 @@ def getHtml(url):
     return html
 
 def getImg(html):
-    reg = r'src="(.+?\.jpg)" alt="IMISS爱蜜社 166期 杨晨晨sugar"'
+    reg = r'src="(.+?\.jpg)" alt=""'
     imgre = re.compile(reg)
     html = html.decode('utf-8')  # python3
     imglist = re.findall(imgre, html)
@@ -16,5 +16,5 @@ def getImg(html):
         urllib.request.urlretrieve(imgurl, '%s.jpg' % x)
         x += 1
 
-html = getHtml("http://www.nenmj.com/1/5798.html")
+html = getHtml("")
 print (getImg(html))
