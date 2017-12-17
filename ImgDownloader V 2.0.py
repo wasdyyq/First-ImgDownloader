@@ -8,12 +8,12 @@ def getHtml(url):
 
 def main():
     depth = 5
-    start_url = 'http://www.nenmj.com/1/5798.html'
+    start_url = ''
     urllist = []
     for i in range(depth):
         url = start_url + '?page=' + str(i + 1)
         html = getHtml(url)
-        reg = r'src="(.+?\.jpg)" alt="IMISS爱蜜社 166期 杨晨晨sugar"'
+        reg = r'src="(.+?\.jpg)" alt=""'
         imgre = re.compile(reg)
         html = html.decode('utf-8')  # python3
         imglist = re.findall(imgre, html)
